@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/shop', function () {
+//     return view('welcome');
+// });
+Route::get('/{name}', 'DefaultController@index')->name('default');
+Route::get('/{name}/{slug}', 'DefaultController@index')->name('slug');
+Route::get('/{name}/category/{category}', 'DefaultController@index')->name('category');
