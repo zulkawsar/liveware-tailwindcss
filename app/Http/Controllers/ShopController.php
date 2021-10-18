@@ -2,34 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\PageSetting;
 use Illuminate\Http\Request;
-use App\Dynamic\DynamicFacade;
 use App\Http\Controllers\ShopController;
 
-class DefaultController extends Controller
+class ShopController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $name=null, $category=null)
+    public function index($args)
     {
-
-
-        // DynamicFacade::shop();
-
-        //  return DynamicFacade::ShopController()->index('kaWSAR');
-        $currentRoute = \Request::route()->getName();
-        $pageSetting = PageSetting::first();
-        
-        $cont = "App\Http\Controllers\\".$pageSetting->controller;
-        return DynamicFacade::DController($cont, $pageSetting->method,['id' => 1])->getResult();
-        
-        return redirect()->action([$cont, $pageSetting->method], ['name' => 'shop', 'slug' => true]);
-        return $pageSetting;
-
+        return view('template.index');
     }
 
     /**
@@ -39,7 +25,7 @@ class DefaultController extends Controller
      */
     public function create()
     {
-        return view('welcome');
+        return 'this is create page';
     }
 
     /**
