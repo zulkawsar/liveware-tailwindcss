@@ -7,7 +7,9 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="bg-gray-100">
-        
+      <div class="">
+
+      </div>    
 
     </body>
 </html>

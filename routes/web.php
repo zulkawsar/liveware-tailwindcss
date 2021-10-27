@@ -20,6 +20,10 @@ Route::get('/', function () {
 // Route::get('/shop', function () {
 //     return view('welcome');
 // });
-Route::get('/{name}', 'DefaultController@index')->name('default');
+Route::get('/abcd', function(){
+    return 'abcd';
+});
+Route::get('/shop', 'DefaultController@index')->name('default');
+Route::get('/shopping', 'DefaultController@index')->name('shopping.default');
 Route::get('/{name}/{slug}', 'DefaultController@index')->name('slug');
 Route::get('/{name}/category/{category}', 'DefaultController@index')->name('category');

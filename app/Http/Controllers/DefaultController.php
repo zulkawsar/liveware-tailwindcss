@@ -21,15 +21,15 @@ class DefaultController extends Controller
         // DynamicFacade::shop();
 
         //  return DynamicFacade::ShopController()->index('kaWSAR');
-        $currentRoute = \Request::route()->getName();
-        $pageSetting = PageSetting::first();
+        // $currentRoute = \Request::route()->getName();
+        // $pageSetting = PageSetting::first();
         
-        $cont = "App\Http\Controllers\\".$pageSetting->controller;
-        return DynamicFacade::DController($cont, $pageSetting->method,['id' => 1])->getResult();
+        // $cont = "App\Http\Controllers\\".$pageSetting->controller;
+        // return DynamicFacade::DController($cont, $pageSetting->method,['id' => 1])->getResult();
         
-        return redirect()->action([$cont, $pageSetting->method], ['name' => 'shop', 'slug' => true]);
-        return $pageSetting;
-
+        // return redirect()->action([$cont, $pageSetting->method], ['name' => 'shop', 'slug' => true]);
+        // return $pageSetting;
+        return view('template.index');
     }
 
     /**
